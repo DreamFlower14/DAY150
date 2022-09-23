@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class D22 {
     public static void main(String[] args) {
+        // CodeUp 1419
         Scanner scan = new Scanner(System.in);
 
         String love = scan.nextLine();
