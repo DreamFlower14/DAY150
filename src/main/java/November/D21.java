@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class D21 {
     public static void main(String[] args) {
         D21 D = new D21();
-        System.out.print(D.solution());
+//        System.out.print(D.solution());
 
     }
     public String solution(String s) {
