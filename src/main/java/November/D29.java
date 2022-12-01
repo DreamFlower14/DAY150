@@ -20,5 +20,4 @@ public class D29 {
         }
         if(cnt == 0){return true;}else{return false;}
     }
-
 }
