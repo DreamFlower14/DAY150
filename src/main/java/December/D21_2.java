@@ -18,14 +18,14 @@ public class D21_2 {
             mid = total/num;    // 반환하는 정수 배열의 중간값
             pm = num/2;   // 3 -> 1, 5 -> 2
 
-
             for (int i = 0; i < num; i++) { // 0,1,2
-                answer[i] = mid - pm + i;
+                answer[i] = mid - pm + i;   // 3,4,5
                 System.out.print(answer[i] + " ");
             }
+
         }else{  // num 이 짝수일 때
-            mid = total/num;
-            pm = num/2-1;
+            mid = total/num;    // 3
+            pm = num/2-1;   // 4 -> 2-1 1
             System.out.println("중간값 : " + mid + "\n플러스 마이너스 값 : " + pm);
 
             for (int i = 0; i < num; i++) { // 0,1,2,3
