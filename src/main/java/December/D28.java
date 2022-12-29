@@ -7,11 +7,11 @@ public class D28 {
         // 두 분수를 더한 값을 기약 분수로 나타냈을 때 분자와 분모를 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.
 
         D28 D = new D28();
-        System.out.println(D.solution1(1,4,2,4)[0]);
+        System.out.println(D.solution(1,2,3,4)[0]);
     }
 
-    public int[] solution1(int denum1, int num1, int denum2, int num2) {
-        int[] answer = new int[2];
+    public int[] solution1(int denum1, int num1, int denum2, int num2) {    // 먼저 만든거라서 살짝 예전버전
+        int[] answer = new int[2];  // 반환값
         int max = 0;    // 최대 공약수
         int min = 0;   // 최소 공배수
         int big, small;
@@ -65,7 +65,7 @@ public class D28 {
     }
 
     public int[] solution(int denum1, int num1, int denum2, int num2) {
-        int max = 0;    // 최대 공약수
+        int temp = 0;    // 최대 공약수
         int big, small;
 
         if (num1 > num2){
@@ -76,17 +76,36 @@ public class D28 {
             small = num1;
         }
 
-        while (small != 0) {
-            max = big % small;
+        while (big % small != 0) {
+            temp = big % small;
             big = small;
-            small = max;
+            small = temp;
         }
 
-        small = num1 * num2 / big;
-        denum1 = denum1 * num2 / big;
-        denum2 = denum2 * num1 / big;
+        big = num1 * num2 / small;  // A x B = 두 수의 최대 공약수 x 두 수의 최소 공배수, 최소 공배수 = A x B / 최대 공약수 -> small 두 수의 최소 공배수
 
-        int[] answer = {denum1 + denum2,small};
+        denum1 = denum1 * num2 / small;   // denum1 -> num1 의 분자 num1이 최소 공배수가 되게 하는 식을 똑같이 분자에 적용해주면 된다.
+        denum2 = denum2 * num1 / small;
+        temp = denum1 + denum2;
+
+        System.out.println("분자 : " + temp + " 분모 : " + big);
+
+        if (temp > big){
+            denum1 = temp;
+            denum2 = big;
+        }else{
+            denum1 = big;
+            denum2 = temp;
+        }
+
+        while (denum1 % denum2 != 0) {
+            small = denum1 % denum2; // 1
+            denum1 = denum2;    // 4
+            denum2 = small;  // 1
+        }
+
+        System.out.println();
+        int[] answer = {temp / denum2, big / denum2};
 
         return answer;
     }
