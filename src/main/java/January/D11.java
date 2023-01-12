@@ -54,20 +54,11 @@ public class D11 {
             System.out.println("all_a : " + all_a);
         }
 
-        for (int i = 0; i < b.length; i++) {
-            all_b *= b[i];
+        for (int j : b) {
+            all_b *= j;
             System.out.println("all_b : " + all_b);
         }
 
         return (int) (all_a/all_b);
-    }
-
-    public int pac(int num) {
-        int answer = 1;
-        for (int i = 1; i <= num; i++) {  //
-            answer = answer * i;
-        }
-        System.out.println("num : " + num + " answer : " + answer);
-        return answer;
     }
 }
