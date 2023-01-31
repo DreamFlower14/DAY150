@@ -13,13 +13,13 @@ public class D27 {
     }
 
     public int[] solution(String my_string) {
-        my_string = my_string.replaceAll("^[a-zA-Z]*$", "");
+        my_string = my_string.replaceAll("[^1-9]", "");
         System.out.println(my_string);
 
         int[] answer = new int[my_string.length()];
 
         for (int i = 0; i < my_string.length(); i++) {
-            answer[i] = my_string.charAt(i);
+            answer[i] = my_string.charAt(i) - 48;
             System.out.println("answer" + i + "번째 값 : " + answer[i]);
         }
 
