@@ -1,3 +1,4 @@
+/*
 package February;
 
 public class D01 {
@@ -27,4 +28,4 @@ public class D01 {
 
         return answer;
     }
-}
+}*/
